@@ -1,0 +1,45 @@
+.header {
+  padding: 50px 0;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000;
+}
+
+.header__logo span {
+  color: var(--main-color);
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu__element {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.menu__element:not(:first-child) {
+  margin-left: 8px;
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+}
+
+.active {
+  color: var(--main-color);
+}

@@ -1,0 +1,125 @@
+.characters__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  position: sticky;
+  top: 0;
+  min-width: 425px;
+  min-height: 200px;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 25px;
+}
+
+.info__text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.info__header {
+  display: flex;
+  max-width: 375px;
+}
+
+.info__header img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.info__name {
+  margin-left: 25px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+.info__descr {
+  max-width: 375px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 15px;
+}
+
+.info__title {
+  display: block;
+  max-width: 375px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  margin-top: 10px;
+}
+
+.info__list {
+  list-style-type: none;
+  max-width: 375px;
+  margin-top: 15px;
+}
+
+.info__element {
+  display: block;
+  max-width: 375px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  box-shadow: 0 5px 5px #bec1c4;
+  padding: 5px 10px;
+}
+
+.info__element:not(:first-child) {
+  margin-top: 10px;
+}
+
+.characters_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 650px;
+  gap: 25px;
+}
+
+.characters__button {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--main-color);
+  padding: 10px 50px;
+  border: none;
+  margin: 45px auto;
+  cursor: pointer;
+}
+
+.character {
+  background-color: var(--bg-color);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #ffffff;
+  min-height: 318px;
+  transition: 0.5s all;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.character:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+.character__title {
+  padding: 15px;
+}
+
+.character img {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}

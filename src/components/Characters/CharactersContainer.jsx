@@ -1,29 +1,35 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import './Characters'
-import axios from 'axios'
+// import axios from 'axios'
 import { Characters } from './Characters'
+import { MarvelAPI } from '../../api/api'
+import { Loading } from '../generic/Loading'
+
 export const CharactersContainer = (props) => {
   const [str, setStr] = useState(9)
+  const [disableButton, setDisableButton] = useState(false)
   const newCharacters = () => {
     setStr(str + 9)
+    setDisableButton(true)
   }
   useEffect(() => {
-    axios
-      .get(
-        `https://gateway.marvel.com:443/v1/public/characters?limit=${str}&offset=1&apikey=eb042783b5351a7c7c1c06b5ccc071c6`
-      )
-      .then((res) => {
-        if (res.status === 200) {
-          props.getCharacters(res.data.data.results)
-        }
-      })
+    MarvelAPI.getCharactersAPI(str).then((res) => {
+      props.getCharacters(res)
+      setDisableButton(false)
+    })
   }, [str])
   let component = () => {
     if (!!props.characters) {
-      return <Characters {...props} newCharacters={newCharacters} />
+      return (
+        <Characters
+          {...props}
+          disableButton={disableButton}
+          newCharacters={newCharacters}
+        />
+      )
     } else {
-      return <h1>pad</h1>
+      return <Loading />
     }
   }
 

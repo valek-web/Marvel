@@ -14,3 +14,24 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.button {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--main-color);
+  padding: 10px 50px;
+  border: none;
+  margin: 45px auto;
+  cursor: pointer;
+  transition: 0.2s all;
+  min-width: 185px;
+}
+
+.button[disabled] {
+  background-color: var(--bg-color);
+  cursor: default;
+}

@@ -3,24 +3,26 @@ import axios from 'axios'
 const API_KYE = 'eb042783b5351a7c7c1c06b5ccc071c6'
 
 export const MarvelAPI = {
-  getCharactersAPI() {
-    axios
+  getCharactersAPI: (str) => {
+    return axios
       .get(
-        `https://gateway.marvel.com:443/v1/public/characters?apikey=${API_KYE}`
+        `https://gateway.marvel.com:443/v1/public/characters?limit=${str}&offset=1&apikey=${API_KYE}`
       )
       .then((res) => {
-        debugger
         if (res.status === 200) {
           return res.data.data.results
         }
       })
   },
-  getComicsAPI() {
-    axios
-      .get(`https://gateway.marvel.com:443/v1/public/comics?apikey=${API_KYE}`)
+  getComicsAPI(str) {
+    return axios
+      .get(
+        `https://gateway.marvel.com:443/v1/public/comics?limit=${str}&apikey=${API_KYE}`
+      )
       .then((res) => {
         if (res.status === 200) {
-          return res.data.data
+          debugger
+          return res.data.data.results
         }
       })
   },

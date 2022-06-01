@@ -28,10 +28,11 @@ export const Characters = (props) => {
               })}
             </div>
             <button
-              className='characters__button'
+              className='button'
               onClick={props.newCharacters}
+              disabled={props.disableButton}
             >
-              LOAD MORE
+              {props.disableButton ? 'Loading...' : 'LOAD MORE'}
             </button>
           </div>
           <div className='info'>

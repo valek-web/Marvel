@@ -1,19 +1,27 @@
 import './App.css'
 import { Header } from './components/Header/Header'
 import { Routes, Route } from 'react-router-dom'
-import { Comics } from './components/Comics/Comics'
 import { connect } from 'react-redux'
 import { actionCreatorComics } from './state/reducers/comics'
 import { actionCreatorCharacters } from './state/reducers/characters'
 import { CharactersContainer } from './components/Characters/CharactersContainer'
+import { ComicsContainer } from './components/Comics/ComicsContainer'
 
 function App(props) {
   return (
     <>
       <Header />
-      <main>
+      <main className='page'>
         <Routes>
-          <Route path='/comics' element={<Comics />} />
+          <Route
+            path='/comics'
+            element={
+              <ComicsContainer
+                comics={props.comics}
+                getComics={props.getComics}
+              />
+            }
+          />
           <Route
             path='/characters'
             element={

@@ -14,14 +14,24 @@ function App(props) {
       <main className='page'>
         <Routes>
           <Route
-            path='/comics'
+            path='comics'
             element={
               <ComicsContainer
                 comics={props.comics}
                 getComics={props.getComics}
               />
             }
-          />
+          >
+            <Route
+              path=':id'
+              element={
+                <ComicsContainer
+                  comics={props.comics}
+                  getComics={props.getComics}
+                />
+              }
+            />
+          </Route>
           <Route
             path='/characters'
             element={
@@ -30,7 +40,17 @@ function App(props) {
                 getCharacters={props.getCharacters}
               />
             }
-          />
+          >
+            <Route
+              path='/characters'
+              element={
+                <CharactersContainer
+                  characters={props.characters}
+                  getCharacters={props.getCharacters}
+                />
+              }
+            />
+          </Route>
         </Routes>
       </main>
     </>

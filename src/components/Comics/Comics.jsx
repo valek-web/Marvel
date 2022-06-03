@@ -1,8 +1,8 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Comics.css'
 
 export const Comics = (props) => {
-  debugger
   return (
     <section className='comics'>
       <div className='container'>
@@ -10,11 +10,13 @@ export const Comics = (props) => {
           {props.comics[0].map((item) => {
             debugger
             return (
-              <ComicsItem
-                title={item.title}
-                price={item.prices[0].price}
-                img={item.thumbnail}
-              />
+              <NavLink to={`${item.id}`} key={item.id}>
+                <ComicsItem
+                  title={item.title}
+                  price={item.prices[0].price}
+                  img={item.thumbnail}
+                />
+              </NavLink>
             )
           })}
         </div>

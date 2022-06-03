@@ -1,7 +1,9 @@
 const SET_COMICS = 'MARVEL/comics/SET_COMMICS'
+const SET_COMIC_INFO = 'MARVEL/comics/SET_COMIC_INFO'
 
 let initialState = {
   comics: null,
+  comicInfo: null,
 }
 
 export const comics_reducer = (state = initialState, action) => {
@@ -10,6 +12,11 @@ export const comics_reducer = (state = initialState, action) => {
       return {
         ...state,
         comics: [action.new_comics],
+      }
+    case SET_COMIC_INFO:
+      return {
+        ...state,
+        comicInfo: [action.info],
       }
     default:
       return state
@@ -23,6 +30,12 @@ export let actionCreatorComics = {
     return {
       type: SET_COMICS,
       new_comics,
+    }
+  },
+  getComicInfo: (info) => {
+    return {
+      type: SET_COMIC_INFO,
+      info,
     }
   },
 }

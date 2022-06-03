@@ -21,7 +21,17 @@ export const MarvelAPI = {
       )
       .then((res) => {
         if (res.status === 200) {
-          debugger
+          return res.data.data.results
+        }
+      })
+  },
+  getComicsID(id) {
+    return axios
+      .get(
+        `https://gateway.marvel.com:443/v1/public/comics/${id}?apikey=${API_KYE}`
+      )
+      .then((res) => {
+        if (res.status === 200) {
           return res.data.data.results
         }
       })

@@ -69,6 +69,19 @@
   font-size: 14px;
   line-height: 16px;
   box-shadow: 0 5px 5px #bec1c4;
+  transition: 0.4s all;
+}
+
+.info__element:hover {
+  transform: translateY(-5px);
+}
+
+.info__element a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  width: 100%;
+  height: 100%;
   padding: 5px 10px;
 }
 

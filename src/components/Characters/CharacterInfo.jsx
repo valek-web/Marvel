@@ -1,12 +1,19 @@
+import { NavLink } from 'react-router-dom'
+
 export const CharacterInfo = (props) => {
   const component = () => {
     if (!!props.info) {
-      console.log(props)
       let element = props.info.comics.items.map((el, index) => {
         if (index >= 10) {
           return null
+        } else {
+          const link = parseInt(el.resourceURI.replace(/[^\d]/g, '')) + ''
+          return (
+            <li className='info__element' key={index}>
+              <NavLink to={`/comics/${link.slice(1)}`}>{el.name}</NavLink>
+            </li>
+          )
         }
-        return <li className='info__element'>{el.name}</li>
       })
       return (
         <>

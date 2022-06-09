@@ -9,6 +9,14 @@ export const Characters = (props) => {
     setNumber(index)
   }
 
+  const onClickCharacter = (id) => {
+    setCharacterInfo(id)
+    if (!props.windowView) {
+      props.setWindowView(true)
+    }
+    console.log('s')
+  }
+
   return (
     <section className='characters'>
       <div className='container'>
@@ -22,7 +30,7 @@ export const Characters = (props) => {
                     img={el.thumbnail}
                     key={el.id}
                     id={index}
-                    setCharacterInfo={setCharacterInfo}
+                    onClickCharacter={onClickCharacter}
                   />
                 )
               })}
@@ -35,9 +43,15 @@ export const Characters = (props) => {
               {props.disableButton ? 'Loading...' : 'LOAD MORE'}
             </button>
           </div>
-          <div className='info'>
-            <CharacterInfo info={props.characters[0][number]} />
+          <div className={props.windowView ? 'info info_active' : 'info'}>
+            <CharacterInfo
+              info={props.characters[0][number]}
+              window={false}
+              setWindowView={props.setWindowView}
+              windowView={props.windowView}
+            />
           </div>
+          <div className={props.windowView ? 'bgc bgc_active' : 'bgc'}></div>
         </div>
       </div>
     </section>
@@ -46,7 +60,7 @@ export const Characters = (props) => {
 
 const Character = (props) => {
   return (
-    <div className='character' onClick={() => props.setCharacterInfo(props.id)}>
+    <div className='character' onClick={() => props.onClickCharacter(props.id)}>
       <img src={`${props.img.path}.${props.img.extension}`} alt='#' />
       <div className='character__title'> {props.name}</div>
     </div>

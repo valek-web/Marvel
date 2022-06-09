@@ -31,6 +31,14 @@ export const CharacterInfo = (props) => {
           </div>
           <div className='info__title'>Comics:</div>
           <ul className='info__list'>{element}</ul>
+          <div
+            className={props.windowView ? 'x-mark x-mark_active' : 'x-mark'}
+            onClick={() => {
+              props.setWindowView(false)
+            }}
+          >
+            <span></span>
+          </div>
         </>
       )
     } else {

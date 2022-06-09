@@ -92,3 +92,36 @@
   margin: 30px 0 0 0;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .comics__wrapper {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .comics__wrapper {
+    grid-template-columns: repeat(3, minmax(auto, 33%));
+  }
+  .comicsItem__img {
+    height: 251px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .comics-info__wrapper {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    padding: 20px 0;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .comics__wrapper {
+    grid-template-columns: repeat(2, minmax(auto, 50%));
+  }
+  .comicsItem__img {
+    height: 200px;
+  }
+}

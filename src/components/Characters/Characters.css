@@ -122,3 +122,143 @@
   max-height: 200px;
   object-fit: cover;
 }
+.bgc {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.x-mark span {
+  position: absolute;
+  right: -35px;
+  top: 0px;
+  width: 32px;
+  height: 32px;
+  z-index: 4;
+  cursor: pointer;
+  padding: 5px;
+}
+.x-mark span:hover {
+  opacity: 1;
+}
+.x-mark span:before,
+.x-mark span:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: var(--main-color);
+}
+.x-mark span:before {
+  transform: rotate(45deg);
+}
+.x-mark span:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .info {
+    min-width: 350px;
+    max-width: auto;
+  }
+  .characters__wrapper {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 993px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .info {
+    display: none;
+    min-width: auto;
+    width: 55vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #fff;
+    height: 60%;
+    z-index: 2;
+  }
+
+  .info_active {
+    display: block;
+  }
+
+  .bgc_active {
+    display: block;
+  }
+
+  .x-mark_active {
+    display: block;
+  }
+
+  .characters_list {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    max-width: 540px;
+  }
+
+  .characters_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info {
+    width: 70vw;
+    height: 100%;
+    z-index: 2;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .container {
+    max-width: 95%;
+  }
+
+  .characters_list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .characters__wrapper {
+    display: block;
+  }
+
+  .header__wrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .info {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 15px;
+    overflow: auto;
+  }
+
+  .info__header {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .x-mark span {
+    display: block;
+    right: 15px;
+    top: 15px;
+  }
+}

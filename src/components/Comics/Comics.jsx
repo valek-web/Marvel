@@ -8,7 +8,6 @@ export const Comics = (props) => {
       <div className='container'>
         <div className='comics__wrapper'>
           {props.comics[0].map((item) => {
-            debugger
             return (
               <NavLink to={`${item.id}`} key={item.id}>
                 <ComicsItem

@@ -9,9 +9,12 @@ import { Loading } from '../generic/Loading'
 export const CharactersContainer = (props) => {
   const [str, setStr] = useState(9)
   const [disableButton, setDisableButton] = useState(false)
+  const [windowView, setWindowView] = useState(false)
+
   const newCharacters = () => {
     setStr(str + 9)
     setDisableButton(true)
+    console.log('x')
   }
   useEffect(() => {
     MarvelAPI.getCharactersAPI(str).then((res) => {
@@ -26,6 +29,8 @@ export const CharactersContainer = (props) => {
           {...props}
           disableButton={disableButton}
           newCharacters={newCharacters}
+          windowView={windowView}
+          setWindowView={setWindowView}
         />
       )
     } else {

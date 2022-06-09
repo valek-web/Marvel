@@ -6,7 +6,8 @@ export const MarvelAPI = {
   getCharactersAPI: (str) => {
     return axios
       .get(
-        `https://gateway.marvel.com:443/v1/public/characters?limit=${str}&offset=1&apikey=${API_KYE}`
+        `https://gateway.marvel.com:443/v1/public/characters?limit=${str}&offset=1&apikey=${API_KYE}`,
+        { withCredentials: true }
       )
       .then((res) => {
         if (res.status === 200) {

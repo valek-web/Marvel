@@ -13,7 +13,7 @@ function App(props) {
     <>
       <Header />
       <main className='page'>
-        <Routes>
+        <Routes basename={process.env.PUBLIC_URL}>
           <Route
             path='comics'
             element={

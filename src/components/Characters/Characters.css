@@ -134,6 +134,7 @@
 }
 
 .x-mark span {
+  display: none;
   position: absolute;
   right: -35px;
   top: 0px;
@@ -202,6 +203,10 @@
   }
 
   .x-mark_active {
+    display: block;
+  }
+
+  .x-mark span {
     display: block;
   }
 
